@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* MSN Games color palette - clean & professional */
+    --background: 0.975 0.003 250;
+    --foreground: 0.15 0.015 250;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.015 250;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.015 250;
+
+    /* MSN Blue */
+    --primary: 0.48 0.17 248;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.955 0.008 248;
+    --secondary-foreground: 0.35 0.02 250;
+
+    --muted: 0.955 0.005 250;
+    --muted-foreground: 0.5 0.015 250;
+
+    --accent: 0.92 0.02 248;
+    --accent-foreground: 0.3 0.05 248;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.9 0.005 248;
+    --input: 0.92 0.005 248;
+    --ring: 0.48 0.17 248;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Custom app tokens */
+    --msn-blue: 0.48 0.17 248;
+    --msn-blue-light: 0.65 0.12 248;
+    --msn-blue-dark: 0.32 0.18 248;
+    --msn-orange: 0.72 0.18 52;
+    --msn-green: 0.62 0.16 145;
+    --msn-red: 0.58 0.22 27;
+
+    /* Background themes */
+    --app-bg: linear-gradient(135deg, #f0f4ff 0%, #f8f9ff 50%, #eef2ff 100%);
+  }
+
+  .dark {
+    --background: 0.12 0.015 250;
+    --foreground: 0.95 0.005 250;
+
+    --card: 0.175 0.015 250;
+    --card-foreground: 0.95 0.005 250;
+
+    --popover: 0.22 0.015 250;
+    --popover-foreground: 0.95 0.005 250;
+
+    --primary: 0.58 0.19 248;
+    --primary-foreground: 0.05 0.01 250;
+
+    --secondary: 0.22 0.015 250;
+    --secondary-foreground: 0.85 0.01 250;
+
+    --muted: 0.22 0.015 250;
+    --muted-foreground: 0.65 0.015 250;
+
+    --accent: 0.28 0.02 248;
+    --accent-foreground: 0.9 0.01 250;
+
+    --destructive: 0.65 0.22 22;
+    --destructive-foreground: 0.95 0.005 250;
+
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.58 0.19 248;
+
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+
+    --sidebar: 0.175 0.015 250;
+    --sidebar-foreground: 0.95 0.005 250;
+    --sidebar-primary: 0.58 0.19 248;
+    --sidebar-primary-foreground: 0.95 0.005 250;
+    --sidebar-accent: 0.22 0.015 250;
+    --sidebar-accent-foreground: 0.85 0.01 250;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.5 0.15 248;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Background themes */
+  .bg-theme-default {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f8f9ff 50%, #eef2ff 100%);
+  }
+
+  .bg-theme-space {
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d1b3e 30%, #1a0533 70%, #080818 100%);
+    color: white;
+  }
+
+  .bg-theme-ocean {
+    background: linear-gradient(180deg, #0077b6 0%, #00b4d8 40%, #90e0ef 80%, #caf0f8 100%);
+  }
+
+  .bg-theme-forest {
+    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 30%, #40916c 70%, #52b788 100%);
+    color: white;
+  }
+
+  .bg-theme-sunset {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 30%, #ff8c42 70%, #ffcb47 100%);
+  }
+
+  .bg-theme-neon {
+    background: linear-gradient(135deg, #0a0015 0%, #1a003a 30%, #0d1b3e 70%, #000a1a 100%);
+    color: white;
+  }
+
+  .bg-theme-paper {
+    background: linear-gradient(135deg, #f5f5dc 0%, #faf9f0 50%, #fffef5 100%);
+  }
+
+  .bg-theme-pastel {
+    background: linear-gradient(135deg, #ffc8dd 0%, #ffafcc 20%, #bde0fe 60%, #a2d2ff 100%);
+  }
+
+  .bg-theme-minecraft {
+    background: linear-gradient(135deg, #3d3d3d 0%, #2a2a2a 40%, #1a1a1a 70%, #2d2d2d 100%);
+    color: white;
+  }
+
+  .bg-theme-aurora {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b4332 30%, #2d6a4f 60%, #0d1b2a 100%);
+    color: white;
+  }
+
+  .bg-theme-cotton-candy {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 40%, #fecfef 70%, #a18cd1 100%);
+  }
+
+  .bg-theme-cyberpunk {
+    background: linear-gradient(135deg, #ff0080 0%, #7928ca 40%, #4f00bc 70%, #ff0080 100%);
+    color: white;
+  }
+
+  /* Neon glow effects for neon theme */
+  .neon-text {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+
+  .neon-border {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.05);
+    border-color: rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Panic button pulse animation */
+@keyframes panic-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    transform: scale(1);
+  }
+}
+
+.panic-pulse {
+  animation: panic-pulse 1.8s ease-in-out infinite;
+}
+
+/* Card hover effect */
+@keyframes card-lift {
+  to {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Smooth transition for all interactive elements */
+.game-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 116, 204, 0.15);
+}
+
+/* Category badge colors */
+.badge-action { background: oklch(0.65 0.2 27); color: white; }
+.badge-puzzle { background: oklch(0.62 0.18 145); color: white; }
+.badge-sports { background: oklch(0.55 0.17 248); color: white; }
+.badge-arcade { background: oklch(0.62 0.2 300); color: white; }
+.badge-strategy { background: oklch(0.65 0.18 52); color: white; }
+.badge-io { background: oklch(0.62 0.18 195); color: white; }
+.badge-shooting { background: oklch(0.52 0.2 15); color: white; }
+.badge-card { background: oklch(0.52 0.15 285); color: white; }
+.badge-word { background: oklch(0.58 0.16 165); color: white; }
+.badge-racing { background: oklch(0.62 0.2 65); color: white; }
+.badge-casual { background: oklch(0.68 0.16 330); color: white; }
+.badge-classic { background: oklch(0.55 0.05 250); color: white; }
+.badge-multiplayer { background: oklch(0.55 0.18 220); color: white; }
+
+/* Hide scrollbar but keep scrollability */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Settings modal tabs */
+.settings-tab {
+  transition: all 0.15s ease;
+}
+
+/* Cloak preset cards */
+.cloak-preset {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.cloak-preset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 116, 204, 0.2);
+}
+
+.cloak-preset.selected {
+  border-color: oklch(0.48 0.17 248);
+  box-shadow: 0 0 0 2px oklch(0.48 0.17 248 / 0.2);
+}
+
+/* Background preset cards */
+.bg-preset {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.bg-preset:hover {
+  transform: scale(1.04);
+}
+
+.bg-preset.selected {
+  outline: 2px solid oklch(0.48 0.17 248);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.75 0.05 248);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.55 0.1 248);
+}
+
+/* iframe overlay */
+.game-overlay {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Search bar focus glow */
+.search-glow:focus {
+  box-shadow: 0 0 0 3px oklch(0.48 0.17 248 / 0.2);
+  border-color: oklch(0.48 0.17 248);
+}
+
+/* Chat panel slide up animation */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.25s ease-out forwards;
+}
+
+/* Fade-in for game grid */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
